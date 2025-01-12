@@ -42,8 +42,8 @@ const Home = () => {
     <><section className="hero">
       <div className="text">
         <h1>{t('一站式人工智能集成平台')}</h1>
-        <h2>{t('与GPT-4o、Claude 3.5 Sonnet、Gemini 1.5等数百万个人工智能模型交谈。')}</h2>
-        <a href="https://www.llmhub.net/login" className="cta">登录</a>
+        <h2>{t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}</h2>
+        <a href="https://www.llmhub.net/login" className="cta">开始使用</a>
       </div>
     </section>
       <section className="application">

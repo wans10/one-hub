@@ -42,7 +42,7 @@ const Home = () => {
     <><section className="hero">
       <div className="text">
         <h1>LLM Hub</h1>
-        <h2>{t('Large Language Model Integration Platform')}</h2>
+        <h2>{t('一站式人工智能集成平台')}</h2>
         <p>{t('与GPT-4o、Claude 3.5 Sonnet、Gemini 1.5等数百万个人工智能模型交谈。')}</p>
         <a href="https://www.llmhub.net/login" className="cta">登录</a>
       </div>

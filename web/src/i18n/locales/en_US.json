@@ -1128,5 +1128,21 @@
     "title": "Model Ownership"
   },
   "一站式人工智能集成平台": "One-stop AI integration platform",
-  "与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。": "Chat with millions of AI models such as ChatGPT, Claude, Gemini, etc."
+  "与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。": "Chat with millions of AI models such as ChatGPT, Claude, Gemini, etc.",
+  "我们提供的服务": "Our services",
+  "可扩展、功能丰富且用户友好的自托管WebUI": "Scalable, feature-rich, and user-friendly self-hosted WebUI",
+  "GPT学术优化": "GPT Academic Optimization",
+  "优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结。": "Optimize the reading/polishing/writing experience of papers, support Python and C++ project analysis and self-translation functions, and translate and summarize PDF/LaTex papers.",
+  "API服务": "API service",
+  "支持多种模型，包括GPT-4o、Claude 3.5 Sonnet、Gemini 1.5 Pro、DALL-E等模型API调用。": "Supports a variety of models, including GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, DALL-E and other model API calls.",
+  "完美适配众多大语言模型": "Perfectly compatible with many large language models",
+  "大语言模型的主要用途": "The main uses of large language models",
+  "自然语言处理": "Natural language processing",
+  "文本生成、语言翻译、摘要提取、情感分析等。": "Text generation, language translation, summary extraction, sentiment analysis, etc.",
+  "教育辅助": "Educational assistance",
+  "论文写作、作业辅助、知识问答、编程辅助等。": "Paper writing, homework assistance, knowledge Q&A, programming assistance, etc.",
+  "代码辅助": "Code assistance",
+  "代码生成、代码补全、代码翻译、代码注释等。": "Code generation, code completion, code translation, code comments, etc.",
+  "创意生成": "Creative generation",
+  "图像生成、音频生成、视频生成、设计生成等。": "Image generation, audio generation, video generation, design generation, etc."
 }

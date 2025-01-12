@@ -43,7 +43,7 @@ const Home = () => {
       <div className="text">
         <h1>{t('一站式人工智能集成平台')}</h1>
         <h2>{t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}</h2>
-        <a href="https://www.llmhub.net/login" className="cta">开始使用</a>
+        <a href="https://www.llmhub.net/login" className="cta">{t('开始使用')}</a>
       </div>
     </section>
       <section className="application">
@@ -58,13 +58,13 @@ const Home = () => {
           <div className="application-item">
             <img src="/academic-icon.png" alt="GPT 学术优化" />
             <h4>{t('GPT学术优化')}</h4>
-            <p>{t('优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结')}</p>
+            <p>{t('优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结。')}</p>
             <a href="https://acad.llmhub.net" className="chat" target="_blank" rel="noreferrer">{t('开始使用')}</a>
           </div>
           <div className="application-item">
             <img src="/ai-icon.png" alt="API" />
             <h4>{t('API服务')}</h4>
-            <p>{t('大语言模型管理系统，支持调用多种大语言模型API')}</p>
+            <p>{t('支持多种模型，包括GPT-4o、Claude 3.5 Sonnet、Gemini 1.5 Pro、DALL-E等模型API调用。')}</p>
             <a href="https://www.llmhub.net/token" className="chat" target="_blank" rel="noreferrer">{t('开始部署')}</a>
           </div>
         </div>
@@ -119,15 +119,15 @@ const Home = () => {
           </div>
           <div className="uses-item">
             <h4>{t('教育辅助')}</h4>
-            <p>{t('生成个性化学习资料，协助教学和自学。')}</p>
+            <p>{t('论文写作、作业辅助、知识问答、编程辅助等。')}</p>
           </div>
           <div className="uses-item">
             <h4>{t('代码辅助')}</h4>
-            <p>{t('帮助开发者快速编写、优化代码，提高开发效率。')}</p>
+            <p>{t('代码生成、代码补全、代码翻译、代码注释等。')}</p>
           </div>
           <div className="uses-item">
             <h4>{t('创意生成')}</h4>
-            <p>{t('生成故事、设计概念、市场文案等创意内容。')}</p>
+            <p>{t('图像生成、音频生成、视频生成、设计生成等。')}</p>
           </div>
         </div>
       </section></>

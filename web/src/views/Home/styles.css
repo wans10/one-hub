@@ -1,0 +1,262 @@
+:root {
+  --primary-color: #0078d7;
+  --primary-light: #e6f3ff;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --background: #ffffff;
+  --card-bg: #f8fafc;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+  --padding-horizontal: 20px; /* 页面左右间距 */
+}
+
+/* 全局通用 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  background: var(--background);
+  line-height: 1.6;
+}
+
+/* 去掉所有链接的下划线 */
+a {
+  text-decoration: none;
+  color: inherit; /* 确保链接的颜色继承父元素的颜色 */
+  transition: var(--transition);
+}
+
+/* hero部分 */
+.hero {
+  padding: 60px var(--padding-horizontal);
+  position: relative;
+  text-align: left; /* 文字左对齐 */
+  background: var(--primary-light);
+}
+.hero .text {
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--primary-color), #1e90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+.hero h2 {
+  font-size: 2.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.hero .cta {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  margin-top: 20px;
+}
+.hero .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.application {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.application h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+.application-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.application-item {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  text-align: center;
+  animation: fadeIn 0.6s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px; /* Set a minimum height for all cards */
+}
+.application-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+.application-item img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+.application-item:hover img {
+  transform: scale(1.1);
+}
+.application-item h4 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.application-item p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.application-item .chat {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: var(--transition);
+  margin: 0;
+}
+.application-item .chat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.models {
+  padding: 40px 20px;
+}
+.models .grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.models h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+.models .grid-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  overflow: hidden;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+.models .grid-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+.models .grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.models .grid-item img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+  transition: var(--transition);
+}
+.models .grid-item:hover img {
+  transform: scale(1.1);
+}
+.models .grid-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: center;
+}
+.uses {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.uses h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+.uses-container {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.uses-item {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  text-align: center;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+.uses-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.uses-item h4 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.uses-item p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding: 80px 40px;
+    text-align: left;
+  }
+
+  .hero .text {
+    max-width: 600px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.application-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.application-item:nth-child(3) {
+  animation-delay: 0.4s;
+}

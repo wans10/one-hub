@@ -47,7 +47,7 @@ a {
 .hero h1 {
   font-size: 2.6rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.4;
   background: linear-gradient(135deg, var(--primary-color), #1e90ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -58,6 +58,7 @@ a {
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   font-weight: 400;
+  line-height: 1.4; /* 或其他合适的值 */
 }
 .hero .cta {
   display: inline-block;

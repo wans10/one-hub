@@ -69,7 +69,7 @@ const Header = () => {
         {isMobile ? (
           <>
             <NoticeButton />
-            <ThemeButton />
+            {/* <ThemeButton /> */}
             <I18nButton />
             <IconButton onClick={handleOpenMenu}>
               <IconMenu2 />
@@ -89,7 +89,7 @@ const Header = () => {
               {t('menu.about')}
             </Button>
             <NoticeButton />
-            <ThemeButton />
+            {/* <ThemeButton /> */}
             <I18nButton />
             {account.user ? (
               <>

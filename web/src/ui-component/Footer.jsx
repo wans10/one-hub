@@ -28,7 +28,7 @@ const Footer = () => {
             <Link href="https://github.com/songquanpeng" target="_blank">
               JustSong
             </Link>{' '}
-            One Hub，{t('footer.sourceCode')}
+            LLM Hub，{t('footer.sourceCode')}
             <Link href="https://opensource.org/licenses/mit-license.php"> {t('footer.license')}</Link>
           </>
         )}

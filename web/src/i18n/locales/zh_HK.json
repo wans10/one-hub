@@ -283,7 +283,9 @@
       "original_times_price": "原價格: ${{ times }} / 次",
       "output_price": "輸出: ${{ price }} /M",
       "times_price": "${{ times }} / 次"
-    }
+    },
+    "cachedReadTokens": "緩存讀取Tokens",
+    "cachedWriteTokens": "緩存寫入 Tokens"
   },
   "login": {
     "codeRequired": "驗證碼不能為空",
@@ -1129,6 +1131,10 @@
     "nameTip": "渠道名稱",
     "title": "模型歸屬"
   },
+  "price": "價格",
+  "模型映射关系：例如用户请求A模型，实际转发给渠道的模型为B。在B模型加前缀+，表示使用传入模型计费，例如：+gpt-3": {
+    "5-turbo": "模型映射關係：例如用戶請求A模型，實際轉發給渠道的模型為B。在B模型加前綴+，表示使用傳入模型計費，例如：+gpt-3.5-turbo"
+  }
   "一站式人工智能集成平台": "一站式人工智能集成平台",
   "与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。": "與ChatGPT、Claude、Gemini等數百萬個人工智能模型交談。",
   "开始使用": "開始使用",

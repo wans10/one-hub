@@ -1134,7 +1134,7 @@
   "price": "Price",
   "模型映射关系：例如用户请求A模型，实际转发给渠道的模型为B。在B模型加前缀+，表示使用传入模型计费，例如：+gpt-3": {
     "5-turbo": "Model mapping relationship: For example, when a user requests Model A, the actual model forwarded to the channel is Model B. Adding a prefix \"+\" to Model B indicates using the incoming model for billing purposes, for example: +gpt-3.5-turbo"
-  }
+  },
   "一站式人工智能集成平台": "One-stop AI integration platform",
   "与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。": "Chat with millions of AI models such as ChatGPT, Claude, Gemini, etc.",
   "开始使用": "Get started",

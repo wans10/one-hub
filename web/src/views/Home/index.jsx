@@ -91,6 +91,12 @@ const Home = () => {
             </a>
           </div>
           <div className="grid-item">
+            <a href="https://x.ai" target="_blank" rel="noreferrer">
+              <img src="https://registry.npmmirror.com/@lobehub/icons-static-svg/1.25.0/files/icons/grok.svg" alt="Google Gemini"/>
+              <p>Grok</p>
+            </a>
+          </div>
+          <div className="grid-item">
             <a href="https://www.deepseek.com" target="_blank" rel="noreferrer">
               <img src="https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/deepseek-color.svg" alt="Midjourney"/>
               <p>DeepSeek</p>

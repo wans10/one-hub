@@ -50,16 +50,22 @@ const Home = () => {
         <h3>{t('我们提供的服务')}</h3>
         <div className="application-container">
           <div className="application-item">
-            <img src="/openwebui-icon.png" alt="Open WebUI" />
-            <h4>Open WebUI</h4>
-            <p>{t('可扩展、功能丰富且用户友好的自托管WebUI')}</p>
-            <a href="https://chat.llmhub.net" className="chat" target="_blank" rel="noreferrer">{t('开始使用')}</a>
-          </div>
-          <div className="application-item">
             <img src="/academic-icon.png" alt="GPT 学术优化" />
             <h4>{t('GPT学术优化')}</h4>
             <p>{t('优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结。')}</p>
-            <a href="https://acad.llmhub.net" className="chat" target="_blank" rel="noreferrer">{t('开始使用')}</a>
+            <a href="https://acad.llmhub.com.cn" className="chat" target="_blank" rel="noreferrer">{t('开始使用')}</a>
+          </div>
+          <div className="application-item">
+            <img src="https://registry.npmmirror.com/@lobehub/icons-static-svg/1.25.0/files/icons/lobehub-color.svg" alt="Lobe Chat" />
+            <h4>Lobe Chat</h4>
+            <p>{t('现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架')}</p>
+            <a href="https://lobe.llmhub.com.cn" className="chat" target="_blank" rel="noreferrer">{t('开始使用')}</a>
+          </div>
+          <div className="application-item">
+            <img src="/openwebui-icon.png" alt="Open WebUI" />
+            <h4>Open WebUI</h4>
+            <p>{t('可扩展、功能丰富且用户友好的自托管WebUI')}</p>
+            <a href="https://open.llmhub.com.cn" className="chat" target="_blank" rel="noreferrer">{t('开始使用')}</a>
           </div>
           <div className="application-item">
             <img src="/ai-icon.png" alt="API" />

@@ -91,8 +91,7 @@ a {
 .application-container {
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-auto-rows: 1fr; /* This will make all rows the same height */
+  grid-template-columns: repeat(4, 1fr); /* 强制使用4列 */
 }
 .application-item {
   background: var(--card-bg);
@@ -262,4 +261,16 @@ a {
 }
 .application-item:nth-child(3) {
   animation-delay: 0.4s;
+}
+/* 添加媒体查询以在较小屏幕上保持响应式 */
+@media (max-width: 1200px) {
+  .application-container {
+    grid-template-columns: repeat(2, 1fr); /* 平板设备显示2列 */
+  }
+}
+
+@media (max-width: 768px) {
+  .application-container {
+    grid-template-columns: 1fr; /* 手机设备显示1列 */
+  }
 }

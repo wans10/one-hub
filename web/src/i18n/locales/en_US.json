@@ -1141,9 +1141,9 @@
   "我们提供的服务": "Our services",
   "可扩展、功能丰富且用户友好的自托管WebUI": "Scalable, feature-rich, and user-friendly self-hosted WebUI",
   "GPT学术优化": "GPT Academic Optimization",
-  "优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结。": "Optimize the reading/polishing/writing experience of papers, support Python and C++ project analysis and self-translation functions, and translate and summarize PDF/LaTex papers.",
+  "优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结": "Optimize the reading/polishing/writing experience of papers, support Python and C++ project analysis and self-translation functions, and translate and summarize PDF/LaTex papers",
   "API服务": "API service",
-  "支持多种模型，包括GPT-4o、Claude 3.5 Sonnet、Gemini 1.5 Pro、DALL-E等模型API调用。": "Supports a variety of models, including GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, DALL-E and other model API calls.",
+  "支持多种模型，包括ChatGPT、Claude、Grok、Gemini、DALL-E等大语言模型API调用": "Supports a variety of models, including ChatGPT, Claude, Grok, Gemini, DALL-E and other large language model API calls",
   "完美适配众多大语言模型": "Perfectly compatible with many large language models",
   "大语言模型的主要用途": "The main uses of large language models",
   "自然语言处理": "Natural language processing",
@@ -1153,5 +1153,6 @@
   "代码辅助": "Code assistance",
   "代码生成、代码补全、代码翻译、代码注释等。": "Code generation, code completion, code translation, code comments, etc.",
   "创意生成": "Creative generation",
-  "图像生成、音频生成、视频生成、设计生成等。": "Image generation, audio generation, video generation, design generation, etc."
+  "图像生成、音频生成、视频生成、设计生成等。": "Image generation, audio generation, video generation, design generation, etc.",
+  "现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架": "Modern design open source ChatGPT/LLMs chat application and development framework"
 }

@@ -52,7 +52,7 @@ const Home = () => {
           <div className="application-item">
             <img src="/academic-icon.png" alt="GPT 学术优化" />
             <h4>{t('GPT学术优化')}</h4>
-            <p>{t('优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结。')}</p>
+            <p>{t('优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结')}</p>
             <a href="https://acad.llmhub.com.cn" className="chat" target="_blank" rel="noreferrer">{t('开始使用')}</a>
           </div>
           <div className="application-item">
@@ -70,7 +70,7 @@ const Home = () => {
           <div className="application-item">
             <img src="/ai-icon.png" alt="API" />
             <h4>{t('API服务')}</h4>
-            <p>{t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini、DALL-E等大语言模型API调用。')}</p>
+            <p>{t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini、DALL-E等大语言模型API调用')}</p>
             <a href="https://www.llmhub.net/token" className="chat" target="_blank" rel="noreferrer">{t('开始部署')}</a>
           </div>
         </div>

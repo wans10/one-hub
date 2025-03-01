@@ -137,7 +137,8 @@ a {
   border-radius: 8px;
   font-weight: 400;
   transition: var(--transition);
-  margin: 0;
+  margin-top: auto; /* Add this to push button to bottom */
+  align-self: center; /* Center the button horizontally */
 }
 .application-item .chat:hover {
   transform: translateY(-2px);

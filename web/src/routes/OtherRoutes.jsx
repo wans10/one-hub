@@ -5,7 +5,7 @@ import Loadable from 'ui-component/Loadable';
 import MinimalLayout from 'layout/MinimalLayout';
 
 // login option 3 routing
-const AuthLogin = Loadable(lazy(() => import('views/Authentication/Auth/Login')));
+const AuthLogin = Loadable(lazy(() => import('views/Authentication/Auth/OIDCOAuth')));
 const AuthRegister = Loadable(lazy(() => import('views/Authentication/Auth/Register')));
 const GitHubOAuth = Loadable(lazy(() => import('views/Authentication/Auth/GitHubOAuth')));
 const LarkOAuth = Loadable(lazy(() => import('views/Authentication/Auth/LarkOAuth')));

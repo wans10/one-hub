@@ -37,7 +37,7 @@ const OtherRoutes = {
     },
     {
       path: '/login',
-      element: <OIDCOAuth />
+      element: <AuthLogin />
     },
     {
       path: '/register',

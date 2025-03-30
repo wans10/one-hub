@@ -9,7 +9,7 @@ import { Box, IconButton, Stack } from '@mui/material';
 // project imports
 import LogoSection from '../LogoSection';
 import ProfileSection from './ProfileSection';
-import ThemeButton from 'ui-component/ThemeButton';
+// import ThemeButton from 'ui-component/ThemeButton';
 import I18nButton from 'ui-component/i18nButton';
 import { NoticeButton } from 'ui-component/notice';
 

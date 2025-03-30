@@ -68,7 +68,7 @@ const Home = () => {
             <a href="https://open.llmhub.com.cn" className="chat" target="_blank" rel="noreferrer">{t('开始使用')}</a>
           </div>
           <div className="application-item">
-            <img src="/ai-icon.png" alt="API" />
+            <img src="/favicon.ico" alt="API" />
             <h4>{t('API服务')}</h4>
             <p>{t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini、DALL-E等大语言模型API调用')}</p>
             <a href="https://www.llmhub.net/token" className="chat" target="_blank" rel="noreferrer">{t('开始部署')}</a>

@@ -69,7 +69,7 @@ const Header = () => {
         {isMobile ? (
           <>
             <NoticeButton sx={{ color: theme.palette.text.primary, mr: 1 }} />
-            <ThemeButton sx={{ color: theme.palette.text.primary, mr: 1 }} />
+            {/* <ThemeButton sx={{ color: theme.palette.text.primary, mr: 1 }} /> */}
             <I18nButton sx={{ color: theme.palette.text.primary, mr: 1 }} />
             <IconButton
               onClick={handleOpenMenu}
@@ -143,7 +143,7 @@ const Header = () => {
               {t('menu.about')}
             </Button>
             <NoticeButton sx={{ color: theme.palette.text.primary, ml: 1 }} />
-            <ThemeButton sx={{ color: theme.palette.text.primary, ml: 0.5 }} />
+            {/* <ThemeButton sx={{ color: theme.palette.text.primary, ml: 0.5 }} /> */}
             <I18nButton sx={{ color: theme.palette.text.primary, ml: 0.5 }} />
             {account.user ? (
               <>

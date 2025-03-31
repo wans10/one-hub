@@ -1006,6 +1006,8 @@
       "default": "Exchange",
       "submitting": "Submitting"
     },
+    "fixedAmounts": "Fixed Amounts",
+    "customAmount": "Custom Amount",
     "exchangeRate": "Exchange rate",
     "fee": "Fee",
     "getRedemptionCode": "Get redemption code",

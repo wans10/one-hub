@@ -1006,6 +1006,8 @@
       "default": "交換",
       "submitting": "送信中"
     },
+    "fixedAmounts": "固定金額",
+    "customAmount": "カスタム金額",
     "exchangeRate": "為替レート",
     "fee": "手数料",
     "getRedemptionCode": "引き換えコードを取得",

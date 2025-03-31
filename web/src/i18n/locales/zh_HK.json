@@ -1006,6 +1006,8 @@
       "default": "兌換",
       "submitting": "提交中"
     },
+    "fixedAmounts": "固定金額",
+    "customAmount": "自訂金額",
     "exchangeRate": "匯率",
     "fee": "手續費",
     "getRedemptionCode": "獲取兌換碼",

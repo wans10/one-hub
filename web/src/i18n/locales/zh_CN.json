@@ -286,6 +286,8 @@
     "discountedPrice": "折扣后价格",
     "fee": "手续费",
     "actualAmountToPay": "实际支付金额",
+    "fixedAmounts": "固定金额",
+    "customAmount": "自定义金额",
     "adminSetupRequired": "管理员尚未设置充值链接！",
     "redemptionCodeTopup": "兑换码充值",
     "noRedemptionCodeText": "还没有兑换码？ 点击获取兑换码：",

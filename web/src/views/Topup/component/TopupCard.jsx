@@ -51,7 +51,7 @@ const TopupCard = () => {
   });
 
   // 固定充值金额选项
-  const fixedAmounts = [5, 10, 15, 20];
+  const fixedAmounts = [10, 20, 30, 50, 100, 200, 500, 1000];
 
   const topUp = async () => {
     if (redemptionCode === '') {

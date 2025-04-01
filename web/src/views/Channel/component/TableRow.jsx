@@ -105,7 +105,7 @@ function statusInfo(t, status) {
   }
 }
 
-export default function ChannelTableRow({ item, manageChannel, onRefresh, groupOptions }) {
+export default function ChannelTableRow({ item, manageChannel, onRefresh, groupOptions, modelOptions }) {
   const { t } = useTranslation();
   const popover = usePopover();
   const confirmDelete = useBoolean();
@@ -244,7 +244,7 @@ export default function ChannelTableRow({ item, manageChannel, onRefresh, groupO
         showInfo(t('channel_row.batchDeleteSuccess'));
         setSelectedChannels([]);
         fetchTagChannels(); // 重新获取数据
-        onRefresh?.(); // 刷新父组件数据
+        onRefresh(false); // 刷新父组件数据
       } else {
         showError(t('channel_row.batchDeleteError', { message }));
       }
@@ -1206,7 +1206,7 @@ export default function ChannelTableRow({ item, manageChannel, onRefresh, groupO
                 .then(({ success }) => {
                   if (success) {
                     showInfo(t('channel_row.deleteTagSuccess', { tag: item.tag }));
-                    onRefresh?.(); // 刷新父组件数据
+                    onRefresh(false); // 刷新父组件数据
                   }
                 })
                 .catch((error) => {
@@ -1241,7 +1241,7 @@ export default function ChannelTableRow({ item, manageChannel, onRefresh, groupO
                         action: statusChangeAction === 'enable' ? t('channel_row.enable') : t('channel_row.disable')
                       })
                     );
-                    onRefresh?.(); // 刷新父组件数据
+                    onRefresh(false); // 刷新父组件数据
                   }
                 })
                 .catch((error) => {
@@ -1263,10 +1263,14 @@ export default function ChannelTableRow({ item, manageChannel, onRefresh, groupO
       <EditeModal
         open={quickEdit.value}
         onCancel={quickEdit.onFalse}
-        onOk={onRefresh}
+        onOk={() => {
+          onRefresh(false);
+          quickEdit.onFalse();
+        }}
         channelId={item.tag ? item.tag : item.id}
         groupOptions={groupOptions}
         isTag={item.tag}
+        modelOptions={modelOptions}
       />
 
       <Popover
@@ -1337,7 +1341,8 @@ ChannelTableRow.propTypes = {
   item: PropTypes.object,
   manageChannel: PropTypes.func,
   onRefresh: PropTypes.func,
-  groupOptions: PropTypes.array
+  groupOptions: PropTypes.array,
+  modelOptions: PropTypes.array
 };
 
 function renderBalance(type, balance) {

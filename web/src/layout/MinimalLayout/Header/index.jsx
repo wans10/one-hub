@@ -28,6 +28,7 @@ import Transitions from 'ui-component/extended/Transitions';
 import MainCard from 'ui-component/cards/MainCard';
 import { useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { onOIDCAuthClicked } from 'utils/common'; // Import the OIDC function
 
 // ==============================|| MINIMAL NAVBAR / HEADER ||============================== //
 
@@ -38,6 +39,7 @@ const Header = () => {
   const [open, setOpen] = useState(null);
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const { t } = useTranslation();
+  const siteInfo = useSelector((state) => state.siteInfo); // Add this to access site info
 
   const handleOpenMenu = (event) => {
     setOpen(open ? null : event.currentTarget);
@@ -45,6 +47,18 @@ const Header = () => {
 
   const handleCloseMenu = () => {
     setOpen(null);
+  };
+
+  // New function to handle login button click
+  const handleLoginClick = (event) => {
+    event.preventDefault();
+    // Check if OIDC is enabled in site settings
+    if (siteInfo.oidc_auth) {
+      onOIDCAuthClicked();
+    } else {
+      // Fallback to regular login page if OIDC is not enabled
+      window.location.href = '/login';
+    }
   };
 
   return (
@@ -167,9 +181,9 @@ const Header = () => {
               </>
             ) : (
               <Button
-                component={Link}
+                // Modified to use onClick instead of Link component
+                onClick={handleLoginClick}
                 variant="contained"
-                to="/login"
                 color="primary"
                 sx={{
                   ml: 2,
@@ -338,9 +352,12 @@ const Header = () => {
                         />
                       </ListItemButton>
                     ) : (
+                      // Modify mobile menu login button too
                       <ListItemButton
-                        component={Link}
-                        to="/login"
+                        onClick={(e) => {
+                          handleCloseMenu();
+                          handleLoginClick(e);
+                        }}
                         sx={{
                           backgroundColor: theme.palette.primary.light,
                           borderRadius: '8px',

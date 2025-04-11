@@ -39,7 +39,8 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api)二次开�
 
 **如果发现缺少新模型，请在`后台-模型价格-更新价格`中更新新增的模型**
 
-[演示网站](https://one-api-martialbe.vercel.app/)
+[演示网站](https://one-hub.xiao5.info/)
+[文档](https://one-hub-doc.vercel.app/)
 
 </div>
 
@@ -71,10 +72,6 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api)二次开�
 - 支持支付
 - 支持配置用户组 RPM
 - 支持`Prometheus`监控
-
-## 文档
-
-请查看[文档](https://github.com/MartialBE/one-hub/wiki)
 
 ## 当前支持的供应商
 
@@ -119,7 +116,7 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api)二次开�
 
 ## 交流群
 
-<img src="https://github.com/MartialBE/one-hub/assets/42402987/9b608d39-70ae-4b2e-be49-09afab6bd536" width="300">
+<img src="https://github.com/user-attachments/assets/d1395dac-bc97-481d-af40-ac47e6a00158" width="300">
 
 ## 其他
 

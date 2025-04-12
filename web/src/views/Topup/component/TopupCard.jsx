@@ -22,7 +22,7 @@ import { useSelector } from 'react-redux';
 import PayDialog from './PayDialog';
 
 import { API } from 'utils/api';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { showError, showInfo, showSuccess, renderQuota, trims } from 'utils/common';
 import { useTranslation } from 'react-i18next';
 
@@ -41,18 +41,16 @@ const TopupCard = () => {
   const [disabledPay, setDisabledPay] = useState(false);
   const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
   const siteInfo = useSelector((state) => state.siteInfo);
-
-  // 从 Redux store 获取折扣配置
-  const RechargeDiscount = useSelector((state) => {
-    if (state.siteInfo.RechargeDiscount === '') {
+  const RechargeDiscount = useMemo(() => {
+    if (siteInfo.RechargeDiscount === '') {
       return {};
     }
-    return JSON.parse(state.siteInfo.RechargeDiscount);
-  });
-
-  // 固定充值金额选项
-  const fixedAmounts = [10, 20, 30, 50, 100, 200, 500, 1000];
-
+    try {
+      return JSON.parse(siteInfo.RechargeDiscount);
+    } catch (e) {
+      return {};
+    }
+  }, [siteInfo.RechargeDiscount]);
   const topUp = async () => {
     if (redemptionCode === '') {
       showInfo(t('topupCard.inputPlaceholder'));
@@ -162,10 +160,10 @@ const TopupCard = () => {
     handleSetAmount(value);
   };
 
-  const handleSetAmount = (value) => {
-    const numValue = Number(value);
-    setAmount(numValue);
-    handleDiscountTotal(numValue);
+  const handleSetAmount = (amount) => {
+    amount = Number(amount);
+    setAmount(amount);
+    handleDiscountTotal(amount);
   };
 
   const calculateFee = () => {
@@ -194,6 +192,7 @@ const TopupCard = () => {
     if (amount === 0) return 0;
     // 如果金额在RechargeDiscount中，则应用折扣,手续费和货币换算汇率不算在折扣内
     const discount = RechargeDiscount[amount] || 1; // 如果没有折扣，则默认为1（即没有折扣）
+    console.log(amount, discount);
     setDiscountTotal(amount * discount);
   };
 
@@ -238,70 +237,25 @@ const TopupCard = () => {
                 </Button>
               </AnimateButton>
             ))}
-
-            {/* 固定金额选项 */}
-            <Typography variant="subtitle1" sx={{ mt: 2, mb: 1 }}>
-              {t('topupCard.fixedAmounts')}
-            </Typography>
             <Grid container spacing={2}>
-              {fixedAmounts.map((fixedAmount) => (
-                <Grid item key={`fixed-${fixedAmount}`}>
-                  <Button
-                    variant="outlined"
-                    onClick={() => handleSetAmount(fixedAmount)}
-                    sx={{
-                      border: amount === fixedAmount ? `1px solid ${theme.palette.primary.main}` : '1px solid rgba(0,0,0,0.23)',
-                      bgcolor: amount === fixedAmount ? `${theme.palette.primary.lighter}` : 'transparent'
-                    }}
-                  >
-                    ${fixedAmount}
-                  </Button>
+              {Object.entries(RechargeDiscount).map(([key, value]) => (
+                <Grid item key={key}>
+                  <Badge badgeContent={value !== 1 ? `${value * 10}折` : null} color="error">
+                    <Button
+                      variant="outlined"
+                      onClick={() => handleSetAmount(key)}
+                      sx={{
+                        border: amount === Number(key) ? `1px solid ${theme.palette.primary.main}` : '1px solid transparent'
+                      }}
+                    >
+                      ${key}
+                    </Button>
+                  </Badge>
                 </Grid>
               ))}
             </Grid>
-
-            {/* 折扣金额选项 */}
-            {Object.keys(RechargeDiscount).length > 0 && (
-              <>
-                <Typography variant="subtitle1" sx={{ mt: 2, mb: 1 }}>
-                  {t('topupCard.discountAmounts')}
-                </Typography>
-                <Grid container spacing={2}>
-                  {Object.entries(RechargeDiscount).map(([key, value]) => (
-                    <Grid item key={key}>
-                      <Badge badgeContent={value !== 1 ? `${value * 10}折` : null} color="error">
-                        <Button
-                          variant="outlined"
-                          onClick={() => handleSetAmount(key)}
-                          sx={{
-                            border: amount === Number(key) ? `1px solid ${theme.palette.primary.main}` : '1px solid rgba(0,0,0,0.23)',
-                            bgcolor: amount === Number(key) ? `${theme.palette.primary.lighter}` : 'transparent'
-                          }}
-                        >
-                          ${key}
-                        </Button>
-                      </Badge>
-                    </Grid>
-                  ))}
-                </Grid>
-              </>
-            )}
-
-            {/* 自定义金额输入 */}
-            <Typography variant="subtitle1" sx={{ mt: 2, mb: 1 }}>
-              {t('topupCard.customAmount')}
-            </Typography>
-            <TextField
-              label={t('topupCard.amount')}
-              type="number"
-              onChange={handleAmountChange}
-              value={amount}
-              fullWidth
-            />
-
-            <Divider sx={{ my: 2 }} />
-
-            {/* 费用计算部分 */}
+            <TextField label={t('topupCard.amount')} type="number" onChange={handleAmountChange} value={amount} />
+            <Divider />
             <Grid container direction="row" justifyContent="flex-end" spacing={2}>
               <Grid item xs={6} md={9}>
                 <Typography variant="h6" style={{ textAlign: 'right', fontSize: '0.875rem' }}>
@@ -355,20 +309,12 @@ const TopupCard = () => {
                     : selectedPayment.currency)}
               </Grid>
             </Grid>
-
-            <Divider sx={{ my: 2 }} />
-
-            <Button
-              variant="contained"
-              onClick={handlePay}
-              disabled={disabledPay || amount <= 0 || !selectedPayment}
-              fullWidth
-              size="large"
-            >
+            <Divider />
+            <Button variant="contained" onClick={handlePay} disabled={disabledPay}>
               {t('topupCard.topup')}
             </Button>
           </Stack>
-          <PayDialog open={open} onClose={onClosePayDialog} amount={amount} uuid={selectedPayment?.uuid} />
+          <PayDialog open={open} onClose={onClosePayDialog} amount={amount} uuid={selectedPayment.uuid} />
         </SubCard>
       )}
 

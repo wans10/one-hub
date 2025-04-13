@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 // material-ui
 import { useTheme, styled } from '@mui/material/styles';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography, Divider } from '@mui/material';
 
 // third-party
 import Chart from 'react-apexcharts';
@@ -102,7 +102,7 @@ const getChartOptions = (theme, type = 'default') => {
 
 // ==============================|| DASHBOARD - TOTAL ORDER LINE CHART CARD ||============================== //
 
-const StatisticalLineChartCard = ({ isLoading, title, chartData, todayValue, type = 'default' }) => {
+const StatisticalLineChartCard = ({ isLoading, title, chartData, todayValue, lastDayValue, type = 'default' }) => {
   const theme = useTheme();
 
   const customChartData = chartData
@@ -132,7 +132,7 @@ const StatisticalLineChartCard = ({ isLoading, title, chartData, todayValue, typ
       {isLoading ? (
         <SkeletonTotalOrderCard />
       ) : (
-        <CardWrapper border={false} content={false}>
+        <CardWrapper border={false} content={false} sx={{ height: '100%' }}>
           <Box
             sx={{
               p: 2.5,
@@ -162,6 +162,160 @@ const StatisticalLineChartCard = ({ isLoading, title, chartData, todayValue, typ
                 >
                   {title}
                 </Typography>
+                <Divider sx={{ mt: 1.5, mb: 1.5 }} />
+                {lastDayValue !== undefined && (
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      mt: 0.5
+                    }}
+                  >
+                    {(() => {
+                      // 去除美元符号进行数值比较
+                      const todayValueNum = parseFloat((todayValue || '0').toString().replace('$', ''));
+                      const lastDayValueNum = parseFloat((lastDayValue || '0').toString().replace('$', ''));
+
+                      // 如果两者都为0，不显示变化
+                      if (todayValueNum === 0 && lastDayValueNum === 0) {
+                        return (
+                          <Typography
+                            component="span"
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              color: 'text.secondary',
+                              fontSize: '14px'
+                            }}
+                          >
+                            0%{' '}
+                            <Box component="span" sx={{ ml: 0.5, color: 'text.secondary', fontSize: '14px' }}>
+                              相比昨日
+                            </Box>
+                          </Typography>
+                        );
+                      }
+                      // 如果今天为0但昨天有值，显示下降100%
+                      else if (todayValueNum === 0 && lastDayValueNum > 0) {
+                        return (
+                          <Typography
+                            component="span"
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              color: 'error.main',
+                              fontSize: '14px'
+                            }}
+                          >
+                            <Box
+                              component="span"
+                              sx={{
+                                mr: 0.5,
+                                transform: 'rotate(45deg)',
+                                display: 'inline-flex'
+                              }}
+                            >
+                              ↓
+                            </Box>
+                            100%{' '}
+                            <Box component="span" sx={{ ml: 0.5, color: 'text.secondary', fontSize: '14px' }}>
+                              相比昨日
+                            </Box>
+                          </Typography>
+                        );
+                      }
+                      // 如果今天有值但昨天为0，显示增长
+                      else if (todayValueNum > 0 && lastDayValueNum === 0) {
+                        return (
+                          <Typography
+                            component="span"
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              color: 'success.main',
+                              fontSize: '14px'
+                            }}
+                          >
+                            <Box
+                              component="span"
+                              sx={{
+                                mr: 0.5,
+                                transform: 'rotate(-45deg)',
+                                display: 'inline-flex'
+                              }}
+                            >
+                              ↑
+                            </Box>
+                            100%{' '}
+                            <Box component="span" sx={{ ml: 0.5, color: 'text.secondary', fontSize: '14px' }}>
+                              相比昨日
+                            </Box>
+                          </Typography>
+                        );
+                      }
+                      // 正常比较
+                      else if (todayValueNum >= lastDayValueNum) {
+                        const percentChange = Math.round(((todayValueNum - lastDayValueNum) / lastDayValueNum) * 100);
+
+                        return (
+                          <Typography
+                            component="span"
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              color: 'success.main',
+                              fontSize: '14px'
+                            }}
+                          >
+                            <Box
+                              component="span"
+                              sx={{
+                                mr: 0.5,
+                                transform: 'rotate(-45deg)',
+                                display: 'inline-flex'
+                              }}
+                            >
+                              ↑
+                            </Box>
+                            {`${percentChange}%`}
+                            <Box component="span" sx={{ ml: 0.5, color: 'text.secondary', fontSize: '14px' }}>
+                              相比昨日
+                            </Box>
+                          </Typography>
+                        );
+                      } else {
+                        const percentChange = Math.round(((lastDayValueNum - todayValueNum) / lastDayValueNum) * 100);
+
+                        return (
+                          <Typography
+                            component="span"
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              color: 'error.main',
+                              fontSize: '14px'
+                            }}
+                          >
+                            <Box
+                              component="span"
+                              sx={{
+                                mr: 0.5,
+                                transform: 'rotate(45deg)',
+                                display: 'inline-flex'
+                              }}
+                            >
+                              ↓
+                            </Box>
+                            {`${percentChange}%`}
+                            <Box component="span" sx={{ ml: 0.5, color: 'text.secondary', fontSize: '14px' }}>
+                              相比昨日
+                            </Box>
+                          </Typography>
+                        );
+                      }
+                    })()}
+                  </Box>
+                )}
               </Grid>
 
               <Grid item xs={6}>
@@ -188,6 +342,7 @@ StatisticalLineChartCard.propTypes = {
   title: PropTypes.string,
   chartData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   todayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  lastDayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   type: PropTypes.string
 };
 

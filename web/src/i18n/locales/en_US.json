@@ -1296,8 +1296,7 @@
       }
     }
   },
-  "这里填写禁用流式的模型，注意：如果填写了禁用流式的模型，那么这些模型在流式请求时会跳过该渠道": "Fill in here to disable the streaming model. Note: If you fill in to disable the streaming model, these models will be skipped for streaming requests on that channel."
-  },
+  "这里填写禁用流式的模型，注意：如果填写了禁用流式的模型，那么这些模型在流式请求时会跳过该渠道": "Fill in here to disable the streaming model. Note: If you fill in to disable the streaming model, these models will be skipped for streaming requests on that channel.",
   "一站式人工智能集成平台": "One-stop AI integration platform",
   "与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。": "Chat with millions of AI models such as ChatGPT, Claude, Gemini, etc.",
   "开始使用": "Get started",

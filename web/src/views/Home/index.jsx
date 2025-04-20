@@ -59,7 +59,7 @@ const Home = () => {
         <h1>{t('一站式人工智能集成平台')}</h1>
         <h2>{t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}</h2>
         {/* 修改这里，将链接改为按钮，并使用 onClick 事件处理 */}
-        <button onClick={handleLoginClick} className="cta">{t('开始使用')}</button>
+        <a href="#" onClick={handleLoginClick} className="cta">{t('开始使用')}</a>
       </div>
     </section>
       <section className="application">

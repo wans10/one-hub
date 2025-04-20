@@ -5,25 +5,31 @@ import { marked } from 'marked';
 import BaseIndex from './baseIndex';
 import { Box, Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux'; // 添加 useSelector 导入
-import { onOIDCAuthClicked } from 'utils/common'; // 导入 OIDC 函数
+import { useSelector } from 'react-redux';
+import { onOIDCAuthClicked } from 'utils/common';
 import './styles.css';
 
 const Home = () => {
   const { t } = useTranslation();
   const [homePageContentLoaded, setHomePageContentLoaded] = useState(false);
   const [homePageContent, setHomePageContent] = useState('');
-  const siteInfo = useSelector((state) => state.siteInfo); // 获取站点信息
+  const siteInfo = useSelector((state) => state.siteInfo);
+  const account = useSelector((state) => state.account); // 获取用户账号信息
 
-  // 新增登录处理函数，与 Header 组件中相同
-  const handleLoginClick = (event) => {
+  // 修改登录处理函数，根据登录状态执行不同操作
+  const handleActionClick = (event) => {
     event.preventDefault();
-    // 检查站点设置中是否启用了OIDC
-    if (siteInfo.oidc_auth) {
-      onOIDCAuthClicked();
+
+    // 如果用户已登录，直接跳转到控制台
+    if (account.user) {
+      window.location.href = '/panel';
     } else {
-      // 如果未启用OIDC，则跳转到常规登录页面
-      window.location.href = '/login';
+      // 未登录用户，检查是否启用OIDC
+      if (siteInfo.oidc_auth) {
+        onOIDCAuthClicked();
+      } else {
+        window.location.href = '/login';
+      }
     }
   };
 
@@ -54,14 +60,17 @@ const Home = () => {
   }, []);
 
   const defaultHomePageContent = (
-    <><section className="hero">
-      <div className="text">
-        <h1>{t('一站式人工智能集成平台')}</h1>
-        <h2>{t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}</h2>
-        {/* 修改这里，将链接改为按钮，并使用 onClick 事件处理 */}
-        <a href="#" onClick={handleLoginClick} className="cta">{t('开始使用')}</a>
-      </div>
-    </section>
+    <>
+      <section className="hero">
+        <div className="text">
+          <h1>{t('一站式人工智能集成平台')}</h1>
+          <h2>{t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}</h2>
+          {/* 按钮文本根据登录状态变化 */}
+          <a href="#" onClick={handleActionClick} className="cta">
+            {account.user ? t('进入控制台') : t('开始使用')}
+          </a>
+        </div>
+      </section>
       <section className="application">
         <h3>{t('我们提供的服务')}</h3>
         <div className="application-container">
@@ -158,7 +167,8 @@ const Home = () => {
             <p>{t('图像生成、音频生成、视频生成、设计生成等。')}</p>
           </div>
         </div>
-      </section></>
+      </section>
+    </>
   );
 
   return (
@@ -177,7 +187,6 @@ const Home = () => {
             </>
           )}
         </Box>
-
       )}
     </>
   );

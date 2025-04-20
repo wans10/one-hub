@@ -5,12 +5,27 @@ import { marked } from 'marked';
 import BaseIndex from './baseIndex';
 import { Box, Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux'; // 添加 useSelector 导入
+import { onOIDCAuthClicked } from 'utils/common'; // 导入 OIDC 函数
 import './styles.css';
 
 const Home = () => {
   const { t } = useTranslation();
   const [homePageContentLoaded, setHomePageContentLoaded] = useState(false);
   const [homePageContent, setHomePageContent] = useState('');
+  const siteInfo = useSelector((state) => state.siteInfo); // 获取站点信息
+
+  // 新增登录处理函数，与 Header 组件中相同
+  const handleLoginClick = (event) => {
+    event.preventDefault();
+    // 检查站点设置中是否启用了OIDC
+    if (siteInfo.oidc_auth) {
+      onOIDCAuthClicked();
+    } else {
+      // 如果未启用OIDC，则跳转到常规登录页面
+      window.location.href = '/login';
+    }
+  };
 
   const displayHomePageContent = async () => {
     setHomePageContent(localStorage.getItem('home_page_content') || '');
@@ -43,7 +58,8 @@ const Home = () => {
       <div className="text">
         <h1>{t('一站式人工智能集成平台')}</h1>
         <h2>{t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}</h2>
-        <a href="/login" className="cta">{t('开始使用')}</a>
+        {/* 修改这里，将链接改为按钮，并使用 onClick 事件处理 */}
+        <a href="#" onClick={handleLoginClick} className="cta">{t('开始使用')}</a>
       </div>
     </section>
       <section className="application">
@@ -150,17 +166,17 @@ const Home = () => {
       {homePageContentLoaded && homePageContent === '' ? (
         defaultHomePageContent
       ) : (
-          <Box>
-            {homePageContent.startsWith('https://') ? (
-              <iframe title="home_page_content" src={homePageContent} style={{ width: '100%', height: '100vh', border: 'none' }} />
-            ) : (
-              <>
-                <Container>
-                  <div style={{ fontSize: 'larger' }} dangerouslySetInnerHTML={{ __html: homePageContent }}></div>
-                </Container>
-              </>
-            )}
-          </Box>
+        <Box>
+          {homePageContent.startsWith('https://') ? (
+            <iframe title="home_page_content" src={homePageContent} style={{ width: '100%', height: '100vh', border: 'none' }} />
+          ) : (
+            <>
+              <Container>
+                <div style={{ fontSize: 'larger' }} dangerouslySetInnerHTML={{ __html: homePageContent }}></div>
+              </Container>
+            </>
+          )}
+        </Box>
 
       )}
     </>

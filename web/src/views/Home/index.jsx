@@ -1,37 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { showError } from 'utils/common';
 import { API } from 'utils/api';
-import { marked } from 'marked';
 import BaseIndex from './baseIndex';
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { onOIDCAuthClicked } from 'utils/common';
-import './styles.css';
+import ContentViewer from 'ui-component/ContentViewer';
 
 const Home = () => {
   const { t } = useTranslation();
   const [homePageContentLoaded, setHomePageContentLoaded] = useState(false);
   const [homePageContent, setHomePageContent] = useState('');
-  const siteInfo = useSelector((state) => state.siteInfo);
-  const account = useSelector((state) => state.account); // 获取用户账号信息
-
-  // 修改登录处理函数，根据登录状态执行不同操作
-  const handleActionClick = (event) => {
-    event.preventDefault();
-
-    // 如果用户已登录，直接跳转到控制台
-    if (account.user) {
-      window.location.href = '/panel';
-    } else {
-      // 未登录用户，检查是否启用OIDC
-      if (siteInfo.oidc_auth) {
-        onOIDCAuthClicked();
-      } else {
-        window.location.href = '/login';
-      }
-    }
-  };
 
   const displayHomePageContent = async () => {
     setHomePageContent(localStorage.getItem('home_page_content') || '');
@@ -39,12 +17,8 @@ const Home = () => {
       const res = await API.get('/api/home_page_content');
       const { success, message, data } = res.data;
       if (success) {
-        let content = data;
-        if (!data.startsWith('https://')) {
-          content = marked.parse(data);
-        }
-        setHomePageContent(content);
-        localStorage.setItem('home_page_content', content);
+        setHomePageContent(data);
+        localStorage.setItem('home_page_content', data);
       } else {
         showError(message);
         setHomePageContent(t('home.loadingErr'));
@@ -174,18 +148,16 @@ const Home = () => {
   return (
     <>
       {homePageContentLoaded && homePageContent === '' ? (
-        defaultHomePageContent
+        <BaseIndex />
       ) : (
         <Box>
-          {homePageContent.startsWith('https://') ? (
-            <iframe title="home_page_content" src={homePageContent} style={{ width: '100%', height: '100vh', border: 'none' }} />
-          ) : (
-            <>
-              <Container>
-                <div style={{ fontSize: 'larger' }} dangerouslySetInnerHTML={{ __html: homePageContent }}></div>
-              </Container>
-            </>
-          )}
+          <ContentViewer
+            content={homePageContent}
+            loading={!homePageContentLoaded}
+            errorMessage={homePageContent === t('home.loadingErr') ? t('home.loadingErr') : ''}
+            containerStyle={{ minHeight: 'calc(100vh - 136px)' }}
+            contentStyle={{ fontSize: 'larger' }}
+          />
         </Box>
       )}
     </>

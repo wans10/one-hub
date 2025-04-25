@@ -4,12 +4,33 @@ import { API } from 'utils/api';
 import BaseIndex from './baseIndex';
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import ContentViewer from 'ui-component/ContentViewer';
+import { useSelector } from 'react-redux';
+import { onOIDCAuthClicked } from 'utils/common';
+import './styles.css';
 
 const Home = () => {
   const { t } = useTranslation();
   const [homePageContentLoaded, setHomePageContentLoaded] = useState(false);
   const [homePageContent, setHomePageContent] = useState('');
+  const siteInfo = useSelector((state) => state.siteInfo);
+  const account = useSelector((state) => state.account); // 获取用户账号信息
+
+  // 修改登录处理函数，根据登录状态执行不同操作
+  const handleActionClick = (event) => {
+    event.preventDefault();
+
+    // 如果用户已登录，直接跳转到控制台
+    if (account.user) {
+      window.location.href = '/panel';
+    } else {
+      // 未登录用户，检查是否启用OIDC
+      if (siteInfo.oidc_auth) {
+        onOIDCAuthClicked();
+      } else {
+        window.location.href = '/login';
+      }
+    }
+  };
 
   const displayHomePageContent = async () => {
     setHomePageContent(localStorage.getItem('home_page_content') || '');
@@ -148,7 +169,7 @@ const Home = () => {
   return (
     <>
       {homePageContentLoaded && homePageContent === '' ? (
-        <BaseIndex />
+        defaultHomePageContent
       ) : (
         <Box>
           <ContentViewer

@@ -1,9 +1,10 @@
-import { Box, Typography, Button, Container, Stack, Card, CardContent, CardMedia, CardActions, Link } from '@mui/material';
+import { Box, Typography, Button, Container, Stack, Card, CardContent, Link } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { GitHub } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { onOIDCAuthClicked } from 'utils/common';
+import { GlobalStyles } from '@mui/material';
 
 const BaseIndex = () => {
   const { t } = useTranslation();
@@ -26,79 +27,84 @@ const BaseIndex = () => {
 
   return (
     <Box sx={{ bgcolor: 'background.default' }}>
-      {/* Hero Section */}
+      <GlobalStyles
+        styles={`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}
+      />
+
+      {/* Hero Section - Updated to match old styling */}
       <Box
         sx={{
-          background: 'linear-gradient(to right, #ff9966, #ff5e62)',
-          color: 'white',
-          py: { xs: 8, md: 10 },
-          px: { xs: 2, md: 5 },
-          mb: 6
+          position: 'relative',
+          py: { xs: 7.5, md: 10 },
+          px: { xs: 2.5, md: 5 },
+          mb: 6,
+          bgcolor: 'var(--primary-light, #e6f3ff)',
+          textAlign: 'left'
         }}
       >
         <Container maxWidth="lg">
-          <Grid container columns={12} alignItems="center" sx={{ minHeight: { xs: 'auto', md: 'calc(100vh - 300px)' } }}>
-            <Grid xs={12} md={7} lg={6}>
-              <Stack spacing={3}>
-                <Typography variant="h1" sx={{
-                  fontSize: { xs: '3rem', md: '4rem' },
-                  color: '#fff',
-                  lineHeight: 1.5,
-                  fontWeight: 600
-                }}>
-                  {t('一站式人工智能集成平台')}
-                </Typography>
-                <Typography variant="h4" sx={{
-                  fontSize: { xs: '1.2rem', md: '1.5rem' },
-                  color: '#fff',
-                  lineHeight: 1.5,
-                  mb: 2
-                }}>
-                  {t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}
-                </Typography>
-                <Button
-                  variant="contained"
-                  onClick={handleActionClick}
-                  sx={{
-                    bgcolor: 'white',
-                    color: '#ff5e62',
-                    fontSize: '1rem',
-                    py: 1.5,
-                    px: 4,
-                    width: 'fit-content',
-                    borderRadius: 2,
-                    '&:hover': {
-                      bgcolor: 'rgba(255, 255, 255, 0.9)',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 10px 15px rgba(0,0,0,0.1)'
-                    },
-                    transition: 'all 0.3s ease'
-                  }}
-                >
-                  {account.user ? t('进入控制台') : t('开始使用')}
-                </Button>
-                <Button
-                  variant="outlined"
-                  startIcon={<GitHub />}
-                  href="https://github.com/MartialBE/one-hub"
-                  target="_blank"
-                  sx={{
-                    color: '#fff',
-                    borderColor: '#fff',
-                    width: 'fit-content',
-                    mt: 2,
-                    '&:hover': {
-                      borderColor: '#fff',
-                      bgcolor: 'rgba(255, 255, 255, 0.1)',
-                      transform: 'translateY(-2px)'
-                    }
-                  }}
-                >
-                  GitHub
-                </Button>
-              </Stack>
-            </Grid>
-          </Grid>
+          <Box
+            sx={{
+              maxWidth: 600,
+              margin: '0 auto',
+              zIndex: 1,
+              position: 'relative'
+            }}
+          >
+            <Typography variant="h1" sx={{
+              fontSize: { xs: '2.2rem', md: '2.6rem' },
+              fontWeight: 600,
+              lineHeight: 1.4,
+              mb: 1,
+              background: 'linear-gradient(135deg, var(--primary-color, #0078d7), #1e90ff)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}>
+              {t('一站式人工智能集成平台')}
+            </Typography>
+            <Typography variant="h2" sx={{
+              fontSize: { xs: '1.4rem', md: '1.8rem' },
+              color: 'var(--text-secondary, #4a5568)',
+              lineHeight: 1.4,
+              mb: 1.5,
+              fontWeight: 400
+            }}>
+              {t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}
+            </Typography>
+            <Button
+              variant="contained"
+              onClick={handleActionClick}
+              sx={{
+                display: 'inline-block',
+                mt: 2.5,
+                py: 1.5,
+                px: 3.5,
+                bgcolor: 'var(--primary-color, #0078d7)',
+                color: 'white',
+                borderRadius: 1,
+                fontWeight: 400,
+                boxShadow: 'var(--shadow-md, 0 4px 6px rgba(0,0,0,0.1))',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  boxShadow: 'var(--shadow-lg, 0 10px 15px rgba(0,0,0,0.1))'
+                }
+              }}
+            >
+              {t('开始使用')}
+            </Button>
+          </Box>
         </Container>
       </Box>
 
@@ -182,7 +188,7 @@ const BaseIndex = () => {
                     {item.desc}
                   </Typography>
                 </CardContent>
-                <CardActions sx={{ justifyContent: 'center', pb: 3 }}>
+                <Box sx={{ justifyContent: 'center', pb: 3, display: 'flex' }}>
                   <Button
                     variant="contained"
                     href={item.link}
@@ -199,7 +205,7 @@ const BaseIndex = () => {
                   >
                     {t('开始使用')}
                   </Button>
-                </CardActions>
+                </Box>
               </Card>
             </Grid>
           ))}
@@ -330,20 +336,6 @@ const BaseIndex = () => {
           ))}
         </Grid>
       </Container>
-
-      {/* Add keyframes for animations */}
-      <style jsx global>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </Box>
   );
 };

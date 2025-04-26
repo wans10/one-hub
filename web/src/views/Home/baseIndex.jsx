@@ -82,6 +82,8 @@ const BaseIndex = () => {
             }}>
               {t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}
             </Typography>
+            // 在 Hero Section 部分注释掉按钮：
+            {/* 注释掉主页 Hero 部分的按钮
             <Button
               variant="contained"
               onClick={handleActionClick}
@@ -104,6 +106,7 @@ const BaseIndex = () => {
             >
               {t('开始使用')}
             </Button>
+            */}
           </Box>
         </Container>
       </Box>

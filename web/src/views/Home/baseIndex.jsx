@@ -124,27 +124,33 @@ const BaseIndex = () => {
         <Grid container spacing={3}>
           {[
             {
+              img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/dify-color.svg",
+              title: "Dify",
+              desc: t('开源的 LLM 应用开发平台。提供从 Agent 构建到 AI workflow 编排、RAG 检索、模型管理等能力，轻松构建和运营生成式 AI 原生应用。'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/gradio-color.svg",
               title: t('GPT学术优化'),
-              desc: t('优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结'),
+              desc: t('优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结。'),
               link: "https://acad.llmhub.com.cn"
             },
             {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/lobehub-color.svg",
               title: "Lobe Chat",
-              desc: t('现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架'),
+              desc: t('现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架。'),
               link: "https://lobe.llmhub.com.cn"
             },
             {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/openwebui.svg",
               title: "Open WebUI",
-              desc: t('可扩展、功能丰富且用户友好的自托管WebUI'),
+              desc: t('可扩展、功能丰富且用户友好的自托管WebUI。'),
               link: "https://open.llmhub.com.cn"
             },
             {
               img: "/favicon.ico",
               title: t('API服务'),
-              desc: t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini、DALL-E等大语言模型API调用'),
+              desc: t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini、DALL-E等大语言模型API调用。'),
               link: "https://www.llmhub.net/token"
             }
           ].map((item, index) => (

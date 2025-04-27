@@ -80,7 +80,7 @@ const BaseIndex = () => {
               mb: 1.5,
               fontWeight: 400
             }}>
-              {t('与ChatGPT、Claude、Gemini等数百万个人工智能模型交谈。')}
+              {t('与ChatGPT、Claude、Grok、Gemini、DeepSeek、Qwen等众多人工智能模型互动。')}
             </Typography>
             {/* 注释掉主页 Hero 部分的按钮
             <Button
@@ -119,7 +119,7 @@ const BaseIndex = () => {
           fontWeight: 400,
           color: 'text.primary'
         }}>
-          {t('我们提供的服务')}
+          {t('支持的开源项目')}
         </Typography>
         <Grid container spacing={3}>
           {[
@@ -150,7 +150,7 @@ const BaseIndex = () => {
             {
               img: "/favicon.ico",
               title: t('API服务'),
-              desc: t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini、DALL-E等大语言模型API调用。'),
+              desc: t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini等大语言模型API调用。'),
               link: "https://www.llmhub.net/token"
             }
           ].map((item, index) => (

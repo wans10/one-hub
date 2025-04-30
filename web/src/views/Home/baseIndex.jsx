@@ -171,6 +171,7 @@ const BaseIndex = () => {
                   boxShadow: '0 10px 15px rgba(0,0,0,0.1)'
                 }
               }}>
+                {/*
                 <CardContent sx={{ flexGrow: 1, textAlign: 'center', p: 3 }}>
                   <Box sx={{
                     mb: 2.5,
@@ -214,6 +215,7 @@ const BaseIndex = () => {
                     {t('开始使用')}
                   </Button>
                 </Box>
+                */}
               </Card>
             </Grid>
           ))}

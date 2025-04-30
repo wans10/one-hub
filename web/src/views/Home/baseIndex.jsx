@@ -124,6 +124,12 @@ const BaseIndex = () => {
         <Grid container spacing={3}>
           {[
             {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cline.bot/&size=256",
+              title: "Cline",
+              desc: t('IDE 中的自主编码代理，能够在每一步获得您的许可的情况下创建/编辑文件、执行命令、使用浏览器等。'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/dify-color.svg",
               title: "Dify",
               desc: t('开源的 LLM 应用开发平台。提供从 Agent 构建到 AI workflow 编排、RAG 检索、模型管理等能力，轻松构建和运营生成式 AI 原生应用。'),

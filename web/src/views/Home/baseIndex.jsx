@@ -137,14 +137,62 @@ const BaseIndex = () => {
             },
             {
               img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://sillytavern.app/&size=256",
-              title: "Roo Code",
+              title: "SillyTavern",
               desc: t('面向高级用户的 LLM 前端'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://shapes.inc/&size=256",
+              title: "shapes inc",
+              desc: t('通用社交代理'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://chub.ai/&size=256",
+              title: "Chub AI",
+              desc: t('人人适用的 GenAI'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://litellm.ai/&size=256",
+              title: "liteLLM",
+              desc: t('简化 LLM 调用的开源库'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://docsloop.com?ref=openrouter/&size=256",
+              title: "DocsLoop",
+              desc: t('不再浪费时间手动输入数据'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://dapp.fractionai.xyz/&size=256",
+              title: "Fraction AI",
+              desc: t('社区拥有的大型永久数据集'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://dapp.fractionai.xyz/&size=256",
+              title: "Fish Audio",
+              desc: t('最自然的 AI 语音'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://infiniteworlds.app/&size=256",
+              title: "Infinite Worlds",
+              desc: t('打造你自己的冒险，并与朋友分享'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://quack.im/&size=256",
+              title: "Quack",
+              desc: t('设计并与角色互动'),
               // link: "https://acad.llmhub.com.cn"
             },
             {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/dify-color.svg",
               title: "Dify",
-              desc: t('开源的 LLM 应用开发平台。提供从 Agent 构建到 AI workflow 编排、RAG 检索、模型管理等能力，轻松构建和运营生成式 AI 原生应用。'),
+              desc: t('开源的 LLM 应用开发平台。'),
               // link: "https://acad.llmhub.com.cn"
             },
             {

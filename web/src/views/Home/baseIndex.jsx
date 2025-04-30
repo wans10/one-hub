@@ -126,7 +126,19 @@ const BaseIndex = () => {
             {
               img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cline.bot/&size=256",
               title: "Cline",
-              desc: t('IDE 中的自主编码代理，能够在每一步获得您的许可的情况下创建/编辑文件、执行命令、使用浏览器等。'),
+              desc: t('IDE 中的自主编码代理'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://roocode.com/&size=256",
+              title: "Roo Code",
+              desc: t('您的编辑器中有一整个 AI 代理开发团队'),
+              // link: "https://acad.llmhub.com.cn"
+            },
+            {
+              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://sillytavern.app/&size=256",
+              title: "Roo Code",
+              desc: t('面向高级用户的 LLM 前端'),
               // link: "https://acad.llmhub.com.cn"
             },
             {

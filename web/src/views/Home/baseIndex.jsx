@@ -171,7 +171,6 @@ const BaseIndex = () => {
                   boxShadow: '0 10px 15px rgba(0,0,0,0.1)'
                 }
               }}>
-                {/*
                 <CardContent sx={{ flexGrow: 1, textAlign: 'center', p: 3 }}>
                   <Box sx={{
                     mb: 2.5,
@@ -197,6 +196,7 @@ const BaseIndex = () => {
                     {item.desc}
                   </Typography>
                 </CardContent>
+                {/*
                 <Box sx={{ justifyContent: 'center', pb: 3, display: 'flex' }}>
                   <Button
                     variant="contained"

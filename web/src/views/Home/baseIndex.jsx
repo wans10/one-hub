@@ -124,69 +124,21 @@ const BaseIndex = () => {
         <Grid container spacing={3}>
           {[
             {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cline.bot/&size=256",
+              img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/cline.svg",
               title: "Cline",
               desc: t('IDE 中的自主编码代理'),
               // link: "https://acad.llmhub.com.cn"
             },
             {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://roocode.com/&size=256",
-              title: "Roo Code",
-              desc: t('您的编辑器中有一整个 AI 代理开发团队'),
+              img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/cursor.svg",
+              title: "Cursor",
+              desc: t('使用 AI 编写代码的最佳方式'),
               // link: "https://acad.llmhub.com.cn"
             },
             {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://sillytavern.app/&size=256",
-              title: "SillyTavern",
-              desc: t('面向高级用户的 LLM 前端'),
-              // link: "https://acad.llmhub.com.cn"
-            },
-            {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://shapes.inc/&size=256",
-              title: "shapes inc",
-              desc: t('通用社交代理'),
-              // link: "https://acad.llmhub.com.cn"
-            },
-            {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://chub.ai/&size=256",
-              title: "Chub AI",
-              desc: t('人人适用的 GenAI'),
-              // link: "https://acad.llmhub.com.cn"
-            },
-            {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://litellm.ai/&size=256",
-              title: "liteLLM",
-              desc: t('简化 LLM 调用的开源库'),
-              // link: "https://acad.llmhub.com.cn"
-            },
-            {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://docsloop.com?ref=openrouter/&size=256",
-              title: "DocsLoop",
-              desc: t('不再浪费时间手动输入数据'),
-              // link: "https://acad.llmhub.com.cn"
-            },
-            {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://dapp.fractionai.xyz/&size=256",
-              title: "Fraction AI",
-              desc: t('社区拥有的大型永久数据集'),
-              // link: "https://acad.llmhub.com.cn"
-            },
-            {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://dapp.fractionai.xyz/&size=256",
-              title: "Fish Audio",
-              desc: t('最自然的 AI 语音'),
-              // link: "https://acad.llmhub.com.cn"
-            },
-            {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://infiniteworlds.app/&size=256",
-              title: "Infinite Worlds",
-              desc: t('打造你自己的冒险，并与朋友分享'),
-              // link: "https://acad.llmhub.com.cn"
-            },
-            {
-              img: "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://quack.im/&size=256",
-              title: "Quack",
-              desc: t('设计并与角色互动'),
+              img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/1.46.0/files/icons/n8n.svg",
+              title: "n8n",
+              desc: t('为技术团队提供灵活的 AI 工作流程自动化'),
               // link: "https://acad.llmhub.com.cn"
             },
             {
@@ -198,7 +150,7 @@ const BaseIndex = () => {
             {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/gradio-color.svg",
               title: t('GPT学术优化'),
-              desc: t('优化论文阅读/润色/写作体验，支持Python和C++等项目剖析与自译解功能，PDF/LaTex论文翻译与总结。'),
+              desc: t('优化论文阅读/润色/写作体验'),
               link: "https://acad.llmhub.com.cn"
             },
             {

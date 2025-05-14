@@ -112,7 +112,7 @@ const Dashboard = () => {
             {/* 用户信息 */}
             <ModelUsagePieChart isLoading={isLoading} data={modelUsageData} />
             <Box mt={2}>
-              <QuickStartCard />
+              {/* <QuickStartCard /> */}
             </Box>
             {/* 邀请 */}
             <Box mt={2}>

@@ -28,14 +28,14 @@ const usage = {
       icon: icons.IconInvoice,
       breadcrumbs: false
     },
-    {
+    /*{
       id: 'midjourney',
       title: 'Midjourney',
       type: 'item',
       url: '/panel/midjourney',
       icon: icons.IconBrush,
       breadcrumbs: false
-    },
+    },*/
     {
       id: 'task',
       title: '异步任务',

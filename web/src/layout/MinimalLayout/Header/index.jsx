@@ -114,7 +114,6 @@ const Header = () => {
             >
               {t('menu.home')}
             </Button>
-            {/*
             {account.user && (
               <Button
                 component={Link}
@@ -130,7 +129,6 @@ const Header = () => {
                 {t('playground')}
               </Button>
             )}
-            */}
             <Button
               component={Link}
               variant="text"
@@ -286,7 +284,6 @@ const Header = () => {
                       />
                     </ListItemButton>
 
-                    {/*
                     {account.user && (
                       <ListItemButton component={Link} to="/playground" selected={pathname === '/playground'}>
                         <ListItemText
@@ -305,7 +302,6 @@ const Header = () => {
                         />
                       </ListItemButton>
                     )}
-                    */}
 
                     <ListItemButton component={Link} to="/price" selected={pathname === '/price'}>
                       <ListItemText

@@ -3,8 +3,8 @@ import { Icon } from '@iconify/react';
 const icons = {
   IconDashboard: () => <Icon width={20} icon="solar:widget-2-bold-duotone" />,
   IconChartHistogram: () => <Icon width={20} icon="solar:chart-2-bold-duotone" />,
-  // 暂时禁用 playgroud 相关图标
-  // IconBallFootball: () => <Icon width={20} icon="solar:chat-round-line-bold-duotone" />
+  IconBallFootball: () => <Icon width={20} icon="solar:chat-round-line-bold-duotone" />,
+  IconSystemInfo: () => <Icon width={20} icon="solar:code-scan-bold" />
 };
 
 const dashboard = {
@@ -30,14 +30,23 @@ const dashboard = {
       breadcrumbs: false,
       isAdmin: true
     },
-    // {
-    //   id: 'playground',
-    //   title: 'Playground',
-    //   type: 'item',
-    //   url: '/panel/playground',
-    //   icon: icons.IconBallFootball,
-    //   breadcrumbs: false
-    // }
+    {
+      id: 'playground',
+      title: 'Playground',
+      type: 'item',
+      url: '/panel/playground',
+      icon: icons.IconBallFootball,
+      breadcrumbs: false
+    },
+    {
+      id: 'systemInfo',
+      title: '系统信息',
+      type: 'item',
+      url: '/panel/system_info',
+      icon: icons.IconSystemInfo,
+      breadcrumbs: false,
+      isAdmin: true
+    },
   ]
 };
 

@@ -144,7 +144,7 @@ const BaseIndex = () => {
             {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/dify-color.svg",
               title: "Dify",
-              desc: t('开源的 LLM 应用开发平台。'),
+              desc: t('开源的 LLM 应用开发平台'),
               // link: "https://acad.llmhub.com.cn"
             },
             {
@@ -156,19 +156,19 @@ const BaseIndex = () => {
             {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/lobehub-color.svg",
               title: "Lobe Chat",
-              desc: t('现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架。'),
+              desc: t('现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架'),
               link: "https://lobe.llmhub.com.cn"
             },
             {
               img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/openwebui.svg",
               title: "Open WebUI",
-              desc: t('可扩展、功能丰富且用户友好的自托管WebUI。'),
+              desc: t('可扩展、功能丰富且用户友好的自托管WebUI'),
               link: "https://open.llmhub.com.cn"
             },
             {
               img: "/favicon.ico",
               title: t('API服务'),
-              desc: t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini等大语言模型API调用。'),
+              desc: t('支持多种模型，包括ChatGPT、Claude、Grok、Gemini等大语言模型API调用'),
               link: "https://www.llmhub.net/token"
             }
           ].map((item, index) => (

@@ -19,7 +19,7 @@ import LogoSection from 'layout/MainLayout/LogoSection';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ThemeButton from 'ui-component/ThemeButton';
+// import ThemeButton from 'ui-component/ThemeButton';
 import { NoticeButton } from 'ui-component/notice';
 import I18nButton from 'ui-component/i18nButton';
 import { IconMenu2 } from '@tabler/icons-react';
@@ -114,8 +114,7 @@ const Header = () => {
             >
               {t('menu.home')}
             </Button>
-            {/*
-            {account.user && (
+{/*            {account.user && (
               <Button
                 component={Link}
                 variant="text"
@@ -129,8 +128,7 @@ const Header = () => {
               >
                 {t('playground')}
               </Button>
-            )}
-            */}
+            )}*/}
             <Button
               component={Link}
               variant="text"
@@ -286,8 +284,7 @@ const Header = () => {
                       />
                     </ListItemButton>
 
-                    {/*
-                    {account.user && (
+{/*                    {account.user && (
                       <ListItemButton component={Link} to="/playground" selected={pathname === '/playground'}>
                         <ListItemText
                           primary={
@@ -304,8 +301,7 @@ const Header = () => {
                           }
                         />
                       </ListItemButton>
-                    )}
-                    */}
+                    )}*/}
 
                     <ListItemButton component={Link} to="/price" selected={pathname === '/price'}>
                       <ListItemText

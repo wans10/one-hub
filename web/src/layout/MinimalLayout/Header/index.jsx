@@ -155,7 +155,7 @@ const Header = () => {
             >
               {t('menu.about')}
             </Button>
-            {siteInfo.UptimeEnabled && (
+{/*            {siteInfo.UptimeEnabled && (
               <Button
                 component="a"
                 href={siteInfo.UptimeDomain}
@@ -171,7 +171,7 @@ const Header = () => {
               >
                 {t('menu.status')}
               </Button>
-            )}
+            )}*/}
             <NoticeButton sx={{ color: theme.palette.text.primary, ml: 1 }} />
             {/* <ThemeButton sx={{ color: theme.palette.text.primary, ml: 0.5 }} /> */}
             <I18nButton sx={{ color: theme.palette.text.primary, ml: 0.5 }} />
@@ -336,7 +336,7 @@ const Header = () => {
                         }
                       />
                     </ListItemButton>
-                    {siteInfo.UptimeEnabled && (
+{/*                    {siteInfo.UptimeEnabled && (
                       <ListItemButton
                         component="a"
                         href={siteInfo.UptimeDomain}
@@ -358,7 +358,7 @@ const Header = () => {
                           }
                         />
                       </ListItemButton>
-                    )}
+                    )}*/}
                     <Divider sx={{ my: 1 }} />
                     {account.user ? (
                       <ListItemButton

@@ -95,9 +95,9 @@ export default function ModelPrice() {
         const group = userGroupMap[selectedGroup];
         const price = model.groups.includes(selectedGroup)
           ? {
-              input: group.ratio * model.price.input,
-              output: group.ratio * model.price.output
-            }
+            input: group.ratio * model.price.input,
+            output: group.ratio * model.price.output
+          }
           : { input: t('modelpricePage.noneGroup'), output: t('modelpricePage.noneGroup') };
 
         const formatPrice = (value, type) => {
@@ -540,8 +540,8 @@ export default function ModelPrice() {
                       >
                         {group.name}
                       </Typography>
-                      {group.ratio > 0 ? (
-/*                        <Box
+                      {/*{group.ratio > 0 ? (
+                        <Box
                           sx={{
                             display: 'flex',
                             alignItems: 'center',
@@ -560,7 +560,7 @@ export default function ModelPrice() {
                           }}
                         >
                           x{group.ratio}
-                        </Box>*/
+                        </Box>
                       ) : (
                         <Box
                           sx={{
@@ -579,7 +579,7 @@ export default function ModelPrice() {
                         >
                           {t('modelpricePage.free')}
                         </Box>
-                      )}
+                      )}*/}
                     </Box>
                   </ButtonBase>
                 </Tooltip>

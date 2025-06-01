@@ -485,7 +485,7 @@ export default function ModelPrice() {
               return (
                 <Tooltip
                   key={key}
-                  title={group.ratio > 0 ? '' : t('modelpricePage.free')}
+                  title={group.ratio > 0 ? `${t('modelpricePage.rate')}: x${group.ratio}` : t('modelpricePage.free')}
                   arrow
                 >
                   <ButtonBase
@@ -541,7 +541,7 @@ export default function ModelPrice() {
                         {group.name}
                       </Typography>
                       {group.ratio > 0 ? (
-                        <Box
+/*                        <Box
                           sx={{
                             display: 'flex',
                             alignItems: 'center',
@@ -560,7 +560,7 @@ export default function ModelPrice() {
                           }}
                         >
                           x{group.ratio}
-                        </Box>
+                        </Box>*/
                       ) : (
                         <Box
                           sx={{

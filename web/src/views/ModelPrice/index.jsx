@@ -483,11 +483,11 @@ export default function ModelPrice() {
             {Object.entries(userGroupMap).map(([key, group]) => {
               const isSelected = selectedGroup === key;
               return (
-                <Tooltip
-                  key={key}
-                  title={group.ratio > 0 ? `${t('modelpricePage.rate')}: x${group.ratio}` : t('modelpricePage.free')}
-                  arrow
-                >
+                // <Tooltip
+                //   key={key}
+                //   title={group.ratio > 0 ? `${t('modelpricePage.rate')}: x${group.ratio}` : t('modelpricePage.free')}
+                //   arrow
+                // >
                   <ButtonBase
                     onClick={() => handleGroupChange(key)}
                     sx={{
@@ -582,7 +582,7 @@ export default function ModelPrice() {
                       )}*/}
                     </Box>
                   </ButtonBase>
-                </Tooltip>
+                // </Tooltip>
               );
             })}
           </Box>

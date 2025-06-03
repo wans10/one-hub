@@ -260,6 +260,8 @@ const BaseIndex = () => {
               { img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/grok.svg", title: "Grok", link: "https://x.ai" },
               { img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/deepseek-color.svg", title: "DeepSeek", link: "https://www.deepseek.com" },
               { img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/qwen-color.svg", title: "通义千问", link: "https://www.aliyun.com/product/bailian" },
+              { img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/volcengine-color.svg", title: "火山引擎", link: "https://www.volcengine.com" },
+              { img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/siliconcloud-color.svg", title: "硅基流动", link: "https://siliconflow.cn" },
               { img: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/zhipu-color.svg", title: "智谱GLM", link: "https://www.zhipuai.cn" }
             ].map((item, index) => (
               <Grid xs={6} sm={4} md={3} lg={12/7} key={index} sx={{
